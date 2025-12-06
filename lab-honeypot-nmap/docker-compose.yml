@@ -1,0 +1,25 @@
+services:
+  honeypot:
+    build: ./honeypot
+    container_name: honeypot-server
+    privileged: true
+    networks:
+      honeypot-net:
+        ipv4_address: 172.16.238.10
+    command: /start_honeyd.sh
+    tty: true
+  attacker:
+    build: ./attacker
+    container_name: nmap-attacker
+    networks:
+    - honeypot-net
+    command: tail -f /dev/null
+    depends_on:
+      - honeypot
+networks:
+  honeypot-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.238.0/24
+

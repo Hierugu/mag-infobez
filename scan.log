@@ -1,0 +1,372 @@
+=== TCP Connect Scan (-sT) ===
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-06 13:51 UTC
+Initiating ARP Ping Scan at 13:51
+Scanning 172.16.238.10 [1 port]
+Completed ARP Ping Scan at 13:51, 0.03s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:51
+Completed Parallel DNS resolution of 1 host. at 13:51, 0.00s elapsed
+Initiating Connect Scan at 13:51
+Scanning honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) [1000 ports]
+Completed Connect Scan at 13:51, 0.02s elapsed (1000 total ports)
+Nmap scan report for honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+Host is up (0.00012s latency).
+All 1000 scanned ports on honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) are closed
+MAC Address: A6:B5:20:1C:90:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.14 seconds
+           Raw packets sent: 1 (28B) | Rcvd: 1 (28B)
+
+=== TCP SYN Scan (-sS) ===
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-06 13:51 UTC
+Initiating ARP Ping Scan at 13:51
+Scanning 172.16.238.10 [1 port]
+Completed ARP Ping Scan at 13:51, 0.04s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:51
+Completed Parallel DNS resolution of 1 host. at 13:51, 0.00s elapsed
+Initiating SYN Stealth Scan at 13:51
+Scanning honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) [1000 ports]
+Completed SYN Stealth Scan at 13:51, 0.04s elapsed (1000 total ports)
+Nmap scan report for honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+Host is up (0.0000080s latency).
+All 1000 scanned ports on honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) are closed
+MAC Address: A6:B5:20:1C:90:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.18 seconds
+           Raw packets sent: 1001 (44.028KB) | Rcvd: 1001 (40.028KB)
+
+=== FIN Scan (-sF) ===
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-06 13:51 UTC
+Initiating ARP Ping Scan at 13:51
+Scanning 172.16.238.10 [1 port]
+Completed ARP Ping Scan at 13:51, 0.05s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:51
+Completed Parallel DNS resolution of 1 host. at 13:51, 0.00s elapsed
+Initiating FIN Scan at 13:51
+Scanning honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) [1000 ports]
+Completed FIN Scan at 13:51, 0.04s elapsed (1000 total ports)
+Nmap scan report for honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+Host is up (0.000010s latency).
+All 1000 scanned ports on honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) are closed
+MAC Address: A6:B5:20:1C:90:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.19 seconds
+           Raw packets sent: 1001 (40.028KB) | Rcvd: 1001 (40.028KB)
+
+=== Xmas Tree Scan (-sX) ===
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-06 13:51 UTC
+Initiating ARP Ping Scan at 13:51
+Scanning 172.16.238.10 [1 port]
+Completed ARP Ping Scan at 13:51, 0.04s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:51
+Completed Parallel DNS resolution of 1 host. at 13:51, 0.00s elapsed
+Initiating XMAS Scan at 13:51
+Scanning honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) [1000 ports]
+Completed XMAS Scan at 13:51, 0.04s elapsed (1000 total ports)
+Nmap scan report for honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+Host is up (0.0000060s latency).
+All 1000 scanned ports on honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) are closed
+MAC Address: A6:B5:20:1C:90:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.18 seconds
+           Raw packets sent: 1001 (40.028KB) | Rcvd: 1001 (40.028KB)
+
+=== NULL Scan (-sN) ===
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-06 13:51 UTC
+Initiating ARP Ping Scan at 13:51
+Scanning 172.16.238.10 [1 port]
+Completed ARP Ping Scan at 13:51, 0.03s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:51
+Completed Parallel DNS resolution of 1 host. at 13:51, 0.00s elapsed
+Initiating NULL Scan at 13:51
+Scanning honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) [1000 ports]
+Completed NULL Scan at 13:51, 0.05s elapsed (1000 total ports)
+Nmap scan report for honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+Host is up (0.0000070s latency).
+All 1000 scanned ports on honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) are closed
+MAC Address: A6:B5:20:1C:90:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.17 seconds
+           Raw packets sent: 1001 (40.028KB) | Rcvd: 1001 (40.028KB)
+
+=== ACK Scan (-sA) ===
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-06 13:51 UTC
+Initiating ARP Ping Scan at 13:51
+Scanning 172.16.238.10 [1 port]
+Completed ARP Ping Scan at 13:51, 0.04s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:51
+Completed Parallel DNS resolution of 1 host. at 13:51, 0.00s elapsed
+Initiating ACK Scan at 13:51
+Scanning honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) [1000 ports]
+Completed ACK Scan at 13:51, 0.05s elapsed (1000 total ports)
+Nmap scan report for honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+Host is up (0.0000080s latency).
+All 1000 scanned ports on honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) are unfiltered
+MAC Address: A6:B5:20:1C:90:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.18 seconds
+           Raw packets sent: 1001 (40.028KB) | Rcvd: 1001 (40.028KB)
+
+=== TCP Window Scan (-sW) ===
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-06 13:51 UTC
+Initiating ARP Ping Scan at 13:51
+Scanning 172.16.238.10 [1 port]
+Completed ARP Ping Scan at 13:51, 0.05s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:51
+Completed Parallel DNS resolution of 1 host. at 13:51, 0.00s elapsed
+Initiating Window Scan at 13:51
+Scanning honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) [1000 ports]
+Completed Window Scan at 13:51, 0.04s elapsed (1000 total ports)
+Nmap scan report for honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+Host is up (0.0000080s latency).
+All 1000 scanned ports on honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) are closed
+MAC Address: A6:B5:20:1C:90:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.19 seconds
+           Raw packets sent: 1001 (40.028KB) | Rcvd: 1001 (40.028KB)
+
+=== IP Protocol Scan (-sO) ===
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-06 13:51 UTC
+Initiating ARP Ping Scan at 13:51
+Scanning 172.16.238.10 [1 port]
+Completed ARP Ping Scan at 13:51, 0.04s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:51
+Completed Parallel DNS resolution of 1 host. at 13:51, 0.00s elapsed
+Initiating IPProto Scan at 13:51
+Scanning honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) [256 ports]
+Increasing send delay for 172.16.238.10 from 0 to 5 due to max_successful_tryno increase to 4
+Increasing send delay for 172.16.238.10 from 5 to 10 due to max_successful_tryno increase to 5
+Increasing send delay for 172.16.238.10 from 10 to 20 due to max_successful_tryno increase to 6
+Increasing send delay for 172.16.238.10 from 20 to 40 due to 11 out of 11 dropped probes since last increase.
+Increasing send delay for 172.16.238.10 from 40 to 80 due to max_successful_tryno increase to 7
+Increasing send delay for 172.16.238.10 from 80 to 160 due to max_successful_tryno increase to 8
+Increasing send delay for 172.16.238.10 from 160 to 320 due to max_successful_tryno increase to 9
+Increasing send delay for 172.16.238.10 from 320 to 640 due to max_successful_tryno increase to 10
+IPProto Scan Timing: About 27.73% done; ETC: 13:53 (0:01:21 remaining)
+Increasing send delay for 172.16.238.10 from 640 to 1000 due to 11 out of 21 dropped probes since last increase.
+IPProto Scan Timing: About 38.67% done; ETC: 13:54 (0:01:37 remaining)
+Warning: 172.16.238.10 giving up on port because retransmission cap hit (10).
+IPProto Scan Timing: About 60.76% done; ETC: 13:54 (0:01:20 remaining)
+IPProto Scan Timing: About 72.48% done; ETC: 13:55 (0:01:03 remaining)
+Discovered open port 1/ip on 172.16.238.10
+IPProto Scan Timing: About 84.20% done; ETC: 13:55 (0:00:37 remaining)
+Discovered open port 6/ip on 172.16.238.10
+Discovered open port 17/ip on 172.16.238.10
+Completed IPProto Scan at 13:56, 270.67s elapsed (256 total ports)
+Nmap scan report for honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+Host is up (0.00011s latency).
+Not shown: 250 closed protocols
+PROTOCOL STATE         SERVICE
+1        open          icmp
+2        open|filtered igmp
+6        open          tcp
+17       open          udp
+103      open|filtered pim
+136      open|filtered udplite
+MAC Address: A6:B5:20:1C:90:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 270.80 seconds
+           Raw packets sent: 683 (13.888KB) | Rcvd: 260 (12.472KB)
+
+=== RPC Scan (-sR) ===
+WARNING: -sR is now an alias for -sV and activates version detection as well as RPC scan.
+Warning: The -sR option is deprecated. Please use -sV
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-06 13:56 UTC
+NSE: Loaded 45 scripts for scanning.
+Initiating ARP Ping Scan at 13:56
+Scanning 172.16.238.10 [1 port]
+Completed ARP Ping Scan at 13:56, 0.04s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:56
+Completed Parallel DNS resolution of 1 host. at 13:56, 0.00s elapsed
+Initiating SYN Stealth Scan at 13:56
+Scanning honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) [1000 ports]
+Completed SYN Stealth Scan at 13:56, 0.04s elapsed (1000 total ports)
+Initiating Service scan at 13:56
+NSE: Script scanning 172.16.238.10.
+Initiating NSE at 13:56
+Completed NSE at 13:56, 0.00s elapsed
+Initiating NSE at 13:56
+Completed NSE at 13:56, 0.00s elapsed
+Nmap scan report for honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+Host is up (0.0000090s latency).
+All 1000 scanned ports on honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) are closed
+MAC Address: A6:B5:20:1C:90:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 0.46 seconds
+           Raw packets sent: 1001 (44.028KB) | Rcvd: 1001 (40.028KB)
+
+=== OS Detection Scan (-O) ===
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-06 13:56 UTC
+Initiating ARP Ping Scan at 13:56
+Scanning 172.16.238.10 [1 port]
+Completed ARP Ping Scan at 13:56, 0.04s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:56
+Completed Parallel DNS resolution of 1 host. at 13:56, 0.00s elapsed
+Initiating SYN Stealth Scan at 13:56
+Scanning honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) [1000 ports]
+Completed SYN Stealth Scan at 13:56, 0.04s elapsed (1000 total ports)
+Initiating OS detection (try #1) against honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+Retrying OS detection (try #2) against honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+Nmap scan report for honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+Host is up (0.000064s latency).
+All 1000 scanned ports on honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) are closed
+MAC Address: A6:B5:20:1C:90:AF (Unknown)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+Read data files from: /usr/bin/../share/nmap
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 1.68 seconds
+           Raw packets sent: 1013 (45.696KB) | Rcvd: 1013 (41.632KB)
+
+=== Aggressive Scan (-A -T4) ===
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-06 13:56 UTC
+NSE: Loaded 151 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 13:56
+Completed NSE at 13:56, 0.00s elapsed
+Initiating NSE at 13:56
+Completed NSE at 13:56, 0.00s elapsed
+Initiating NSE at 13:56
+Completed NSE at 13:56, 0.00s elapsed
+Initiating ARP Ping Scan at 13:56
+Scanning 172.16.238.10 [1 port]
+Completed ARP Ping Scan at 13:56, 0.03s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:56
+Completed Parallel DNS resolution of 1 host. at 13:56, 0.00s elapsed
+Initiating SYN Stealth Scan at 13:56
+Scanning honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) [1000 ports]
+Completed SYN Stealth Scan at 13:56, 0.05s elapsed (1000 total ports)
+Initiating Service scan at 13:56
+Initiating OS detection (try #1) against honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+Retrying OS detection (try #2) against honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+NSE: Script scanning 172.16.238.10.
+Initiating NSE at 13:56
+Completed NSE at 13:56, 0.00s elapsed
+Initiating NSE at 13:56
+Completed NSE at 13:56, 0.00s elapsed
+Initiating NSE at 13:56
+Completed NSE at 13:56, 0.00s elapsed
+Nmap scan report for honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+Host is up (0.000078s latency).
+All 1000 scanned ports on honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) are closed
+MAC Address: A6:B5:20:1C:90:AF (Unknown)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.08 ms honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+
+NSE: Script Post-scanning.
+Initiating NSE at 13:56
+Completed NSE at 13:56, 0.00s elapsed
+Initiating NSE at 13:56
+Completed NSE at 13:56, 0.00s elapsed
+Initiating NSE at 13:56
+Completed NSE at 13:56, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 2.11 seconds
+           Raw packets sent: 1013 (45.696KB) | Rcvd: 1013 (41.632KB)
+
+=== UDP Scan (-sU --top-ports 20) ===
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-06 13:56 UTC
+Initiating ARP Ping Scan at 13:56
+Scanning 172.16.238.10 [1 port]
+Completed ARP Ping Scan at 13:56, 0.05s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:56
+Completed Parallel DNS resolution of 1 host. at 13:56, 0.00s elapsed
+Initiating UDP Scan at 13:56
+Scanning honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) [20 ports]
+Increasing send delay for 172.16.238.10 from 0 to 50 due to max_successful_tryno increase to 4
+Completed UDP Scan at 13:56, 7.45s elapsed (20 total ports)
+Nmap scan report for honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+Host is up (0.000083s latency).
+
+PORT      STATE         SERVICE
+53/udp    open|filtered domain
+67/udp    closed        dhcps
+68/udp    closed        dhcpc
+69/udp    closed        tftp
+123/udp   open|filtered ntp
+135/udp   closed        msrpc
+137/udp   open|filtered netbios-ns
+138/udp   closed        netbios-dgm
+139/udp   open|filtered netbios-ssn
+161/udp   closed        snmp
+162/udp   open|filtered snmptrap
+445/udp   closed        microsoft-ds
+500/udp   open|filtered isakmp
+514/udp   closed        syslog
+520/udp   open|filtered route
+631/udp   closed        ipp
+1434/udp  open|filtered ms-sql-m
+1900/udp  closed        upnp
+4500/udp  closed        nat-t-ike
+49152/udp closed        unknown
+MAC Address: A6:B5:20:1C:90:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 7.61 seconds
+           Raw packets sent: 82 (4.492KB) | Rcvd: 13 (760B)
+
+=== Combined Scan (SYN+Services+OS) ===
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-06 13:56 UTC
+Nmap scan report for honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+Host is up (0.000050s latency).
+All 1000 scanned ports on honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) are closed
+MAC Address: A6:B5:20:1C:90:AF (Unknown)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 1.87 seconds
+
+=== Fragmented Packet Scan (-sS -f) ===
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-06 13:56 UTC
+Initiating ARP Ping Scan at 13:56
+Scanning 172.16.238.10 [1 port]
+Completed ARP Ping Scan at 13:56, 0.04s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:56
+Completed Parallel DNS resolution of 1 host. at 13:56, 0.00s elapsed
+Initiating SYN Stealth Scan at 13:56
+Scanning honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) [1000 ports]
+Completed SYN Stealth Scan at 13:56, 0.06s elapsed (1000 total ports)
+Nmap scan report for honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+Host is up (0.000014s latency).
+All 1000 scanned ports on honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) are closed
+MAC Address: A6:B5:20:1C:90:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.19 seconds
+           Raw packets sent: 1001 (44.028KB) | Rcvd: 1001 (40.028KB)
+
+=== Spoofed MAC Scan (--spoof-mac 0) ===
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-06 13:56 UTC
+Spoofing MAC address 10:7A:66:C6:54:75 (No registered vendor)
+Initiating ARP Ping Scan at 13:56
+Scanning 172.16.238.10 [1 port]
+Completed ARP Ping Scan at 13:56, 0.04s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:56
+Completed Parallel DNS resolution of 1 host. at 13:56, 0.00s elapsed
+Initiating SYN Stealth Scan at 13:56
+Scanning honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) [1000 ports]
+Completed SYN Stealth Scan at 13:56, 0.04s elapsed (1000 total ports)
+Nmap scan report for honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10)
+Host is up (0.0000070s latency).
+All 1000 scanned ports on honeypot-server.lab-honeypot-nmap_honeypot-net (172.16.238.10) are closed
+MAC Address: A6:B5:20:1C:90:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.19 seconds
+           Raw packets sent: 1001 (44.028KB) | Rcvd: 1001 (40.028KB)
