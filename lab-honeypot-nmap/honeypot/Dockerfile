@@ -5,7 +5,9 @@ RUN sed -i 's/archive.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.lis
     sed -i 's/security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
 
 # Установка dos2unix для конвертации строк
-RUN apt-get update && apt-get install -y dos2unix && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+    apt-get install -y dos2unix nmap && \
+    rm -rf /var/lib/apt/lists/*
 
 # Настройка Honeyd конфигурации
 RUN mkdir -p /etc/honeypot

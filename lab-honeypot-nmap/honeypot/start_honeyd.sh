@@ -2,7 +2,7 @@
 NET_IFACE="eth0"
 NET_CIDR="172.16.238.0/24"
 ip link set dev $NET_IFACE promisc on
-farpd -i $NET_IFACE $NET_CIDR &
+farpd -d &
 sleep 1
-honeyd -i $NET_IFACE -f /etc/honeypot/honeyd.conf &
+honeyd -d -f /etc/honeypot/honeyd.conf 172.16.238.0/24 &
 tail -f /dev/null

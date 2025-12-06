@@ -7,5 +7,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /root
-COPY scan_script.sh scan_script.sh
-RUN chmod +x scan_script.sh
+COPY scan.sh scan.sh
+RUN chmod +x scan.sh
+
+ENTRYPOINT ["/bin/bash", "./scan.sh"]

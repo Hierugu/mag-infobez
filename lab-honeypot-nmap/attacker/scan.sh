@@ -1,10 +1,20 @@
 #!/bin/bash
 TARGET_IP="172.16.238.10"
+AUTO_MODE=false
+
+# Check for --auto argument
+if [[ "$1" == "--auto" ]]; then
+    AUTO_MODE=true
+fi
 
 # Функция для ожидания нажатия Enter
 wait_for_user() {
-    echo -e "\nНажмите ENTER для продолжения..."
-    read
+    if [[ "$AUTO_MODE" == true ]]; then
+        sleep 1
+    else
+        echo -e "\nНажмите ENTER для продолжения..."
+        read
+    fi
 }
 
 echo -e "\n=== TCP Connect Scan (-sT) ==="
