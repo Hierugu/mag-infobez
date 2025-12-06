@@ -5,14 +5,15 @@ services:
     privileged: true
     networks:
       honeypot-net:
-        ipv4_address: 172.16.238.10
+        ipv4_address: 172.16.238.3
     command: /start_honeyd.sh
     tty: true
   attacker:
     build: ./attacker
     container_name: nmap-attacker
     networks:
-    - honeypot-net
+      honeypot-net:
+        ipv4_address: 172.16.238.2
     command: tail -f /dev/null
     depends_on:
       - honeypot
