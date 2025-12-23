@@ -10,4 +10,4 @@ WORKDIR /root
 COPY scan.sh scan.sh
 RUN chmod +x scan.sh
 
-# ENTRYPOINT ["/bin/bash", "./scan.sh"]
+# ENTRYPOINT ["/bin/bash", "./scan.sh --auto 172.16.238.4"]

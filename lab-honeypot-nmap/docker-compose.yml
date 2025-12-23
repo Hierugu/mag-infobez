@@ -17,8 +17,17 @@ services:
       honeypot-net:
         ipv4_address: 172.16.238.2
     command: tail -f /dev/null
-    depends_on:
-      - honeypot
+  opencanary:
+    build: ./opencanary
+    container_name: opencanary
+    networks:
+      honeypot-net:
+        ipv4_address: 172.16.238.4
+    environment:
+      - TELNET_PASSWORD=honeypot123
+      - MYSQL_PASSWORD=mysqlpass456
+      - SSH_PASSWORD=sshpass789
+    tty: true
 networks:
   honeypot-net:
     driver: bridge
