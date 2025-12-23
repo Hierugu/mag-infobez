@@ -6,7 +6,7 @@ RUN sed -i 's/archive.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.lis
 
 # Установка dos2unix для конвертации строк
 RUN apt-get update && \
-    apt-get install -y dos2unix nmap && \
+    apt-get install -y dos2unix nmap inetutils-ping && \
     rm -rf /var/lib/apt/lists/*
 
 # Настройка Honeyd конфигурации

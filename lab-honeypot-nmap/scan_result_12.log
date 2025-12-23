@@ -1,0 +1,306 @@
+╔════════════════════════════════════════════════════════════╗
+║     СКАНИРОВАНИЕ HONEYPOT ЦЕЛЕВОГО ХОСТА                   ║
+║     Target: 172.16.238.12                                  ║
+╚════════════════════════════════════════════════════════════╝
+
+=== 1. TCP Connect Scan (-sT) ===
+Метод: полное установление TCP-соединения
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-23 11:14 UTC
+Initiating ARP Ping Scan at 11:14
+Scanning 172.16.238.12 [1 port]
+Completed ARP Ping Scan at 11:14, 0.04s elapsed (1 total hosts)
+Initiating Connect Scan at 11:14
+Scanning 172.16.238.12 [1000 ports]
+Completed Connect Scan at 11:14, 21.02s elapsed (1000 total ports)
+Nmap scan report for 172.16.238.12
+Host is up (0.00036s latency).
+All 1000 scanned ports on 172.16.238.12 are filtered
+MAC Address: 12:12:12:41:B7:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 21.13 seconds
+           Raw packets sent: 1 (28B) | Rcvd: 1 (28B)
+
+=== 2. TCP SYN Scan (-sS) ===
+Метод: полуоткрытое сканирование (посылается только SYN)
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-23 11:15 UTC
+Initiating ARP Ping Scan at 11:15
+Scanning 172.16.238.12 [1 port]
+Completed ARP Ping Scan at 11:15, 0.05s elapsed (1 total hosts)
+Initiating SYN Stealth Scan at 11:15
+Scanning 172.16.238.12 [1000 ports]
+Discovered open port 25/tcp on 172.16.238.12
+Discovered open port 22/tcp on 172.16.238.12
+Discovered open port 80/tcp on 172.16.238.12
+Discovered open port 21/tcp on 172.16.238.12
+Discovered open port 443/tcp on 172.16.238.12
+Discovered open port 1/tcp on 172.16.238.12
+Discovered open port 23/tcp on 172.16.238.12
+Completed SYN Stealth Scan at 11:15, 1.14s elapsed (1000 total ports)
+Nmap scan report for 172.16.238.12
+Host is up (0.0019s latency).
+Not shown: 993 closed ports
+PORT    STATE SERVICE
+1/tcp   open  tcpmux
+21/tcp  open  ftp
+22/tcp  open  ssh
+23/tcp  open  telnet
+25/tcp  open  smtp
+80/tcp  open  http
+443/tcp open  https
+MAC Address: 12:12:12:41:B7:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 1.29 seconds
+           Raw packets sent: 1010 (44.424KB) | Rcvd: 1001 (40.056KB)
+
+
+=== 3. FIN Scan (-sF) ===
+Метод: передаются пакеты с флагом FIN
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-23 11:15 UTC
+Initiating ARP Ping Scan at 11:15
+Scanning 172.16.238.12 [1 port]
+Completed ARP Ping Scan at 11:15, 0.04s elapsed (1 total hosts)
+Initiating FIN Scan at 11:15
+Scanning 172.16.238.12 [1000 ports]
+Completed FIN Scan at 11:15, 1.24s elapsed (1000 total ports)
+Nmap scan report for 172.16.238.12
+Host is up (0.0011s latency).
+Not shown: 993 closed ports
+PORT    STATE         SERVICE
+1/tcp   open|filtered tcpmux
+21/tcp  open|filtered ftp
+22/tcp  open|filtered ssh
+23/tcp  open|filtered telnet
+25/tcp  open|filtered smtp
+80/tcp  open|filtered http
+443/tcp open|filtered https
+MAC Address: 12:12:12:41:B7:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 1.37 seconds
+           Raw packets sent: 1008 (40.308KB) | Rcvd: 995 (39.792KB)
+
+
+
+=== 4. Xmas Tree Scan (-sX) ===
+Метод: пакет с флагами FIN, PSH, URG
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-23 11:15 UTC
+Initiating ARP Ping Scan at 11:15
+Scanning 172.16.238.12 [1 port]
+Completed ARP Ping Scan at 11:15, 0.04s elapsed (1 total hosts)
+Initiating XMAS Scan at 11:15
+Scanning 172.16.238.12 [1000 ports]
+Completed XMAS Scan at 11:15, 0.10s elapsed (1000 total ports)
+Nmap scan report for 172.16.238.12
+Host is up (0.0014s latency).
+All 1000 scanned ports on 172.16.238.12 are closed
+MAC Address: 12:12:12:41:B7:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.26 seconds
+           Raw packets sent: 1001 (40.028KB) | Rcvd: 1001 (40.028KB)
+
+=== 5. NULL Scan (-sN) ===
+Метод: пакет без установленных флагов
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-23 11:15 UTC
+Initiating ARP Ping Scan at 11:15
+Scanning 172.16.238.12 [1 port]
+Completed ARP Ping Scan at 11:15, 0.04s elapsed (1 total hosts)
+Initiating NULL Scan at 11:15
+Scanning 172.16.238.12 [1000 ports]
+Completed NULL Scan at 11:15, 0.11s elapsed (1000 total ports)
+Nmap scan report for 172.16.238.12
+Host is up (0.0015s latency).
+All 1000 scanned ports on 172.16.238.12 are closed
+MAC Address: 12:12:12:41:B7:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.26 seconds
+           Raw packets sent: 1001 (40.028KB) | Rcvd: 1001 (40.028KB)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=== 6. IP Protocol Scan (-sO) ===
+Метод: определение поддерживаемых IP-протоколов
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-23 11:15 UTC
+Initiating ARP Ping Scan at 11:15
+Scanning 172.16.238.12 [1 port]
+Completed ARP Ping Scan at 11:15, 0.03s elapsed (1 total hosts)
+Initiating IPProto Scan at 11:15
+Scanning 172.16.238.12 [256 ports]
+Discovered open port 17/ip on 172.16.238.12
+Discovered open port 6/ip on 172.16.238.12
+Discovered open port 1/ip on 172.16.238.12
+Completed IPProto Scan at 11:15, 2.65s elapsed (256 total ports)
+Nmap scan report for 172.16.238.12
+Host is up (0.00023s latency).
+Not shown: 253 open|filtered protocols
+PROTOCOL STATE SERVICE
+1        open  icmp
+6        open  tcp
+17       open  udp
+MAC Address: 12:12:12:41:B7:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 2.76 seconds
+           Raw packets sent: 510 (10.324KB) | Rcvd: 4 (152B)
+
+=== 7. ACK Scan (-sA) ===
+Метод: ACK-пакеты для анализа фильтрации
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-23 11:15 UTC
+Initiating ARP Ping Scan at 11:15
+Scanning 172.16.238.12 [1 port]
+Completed ARP Ping Scan at 11:15, 0.04s elapsed (1 total hosts)
+Initiating ACK Scan at 11:15
+Scanning 172.16.238.12 [1000 ports]
+Completed ACK Scan at 11:15, 0.10s elapsed (1000 total ports)
+Nmap scan report for 172.16.238.12
+Host is up (0.0012s latency).
+All 1000 scanned ports on 172.16.238.12 are unfiltered
+MAC Address: 12:12:12:41:B7:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.27 seconds
+           Raw packets sent: 1001 (40.028KB) | Rcvd: 1001 (40.028KB)
+
+
+=== 8. TCP Window Scan (-sW) ===
+Метод: анализ окна TCP
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-23 11:15 UTC
+Initiating ARP Ping Scan at 11:15
+Scanning 172.16.238.12 [1 port]
+Completed ARP Ping Scan at 11:15, 0.04s elapsed (1 total hosts)
+Initiating Window Scan at 11:15
+Scanning 172.16.238.12 [1000 ports]
+Completed Window Scan at 11:15, 0.10s elapsed (1000 total ports)
+Nmap scan report for 172.16.238.12
+Host is up (0.0012s latency).
+All 1000 scanned ports on 172.16.238.12 are closed
+MAC Address: 12:12:12:41:B7:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.26 seconds
+           Raw packets sent: 1001 (40.028KB) | Rcvd: 1001 (40.028KB)
+
+=== 9. RPC Scan (-sR) ===
+Метод: определение RPC-служб
+WARNING: -sR is now an alias for -sV and activates version detection as well as RPC scan.
+Warning: The -sR option is deprecated. Please use -sV
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-23 11:15 UTC
+NSE: Loaded 45 scripts for scanning.
+Initiating ARP Ping Scan at 11:15
+Scanning 172.16.238.12 [1 port]
+Completed ARP Ping Scan at 11:15, 0.04s elapsed (1 total hosts)
+Initiating SYN Stealth Scan at 11:15
+Scanning 172.16.238.12 [1000 ports]
+Discovered open port 23/tcp on 172.16.238.12
+Discovered open port 80/tcp on 172.16.238.12
+Discovered open port 443/tcp on 172.16.238.12
+Discovered open port 22/tcp on 172.16.238.12
+Discovered open port 25/tcp on 172.16.238.12
+Discovered open port 21/tcp on 172.16.238.12
+Discovered open port 1/tcp on 172.16.238.12
+Completed SYN Stealth Scan at 11:15, 0.10s elapsed (1000 total ports)
+Initiating Service scan at 11:15
+Scanning 7 services on 172.16.238.12
+Completed Service scan at 11:15, 5.00s elapsed (7 services on 1 host)
+NSE: Script scanning 172.16.238.12.
+Initiating NSE at 11:15
+Completed NSE at 11:15, 6.07s elapsed
+Initiating NSE at 11:15
+Completed NSE at 11:15, 2.00s elapsed
+Nmap scan report for 172.16.238.12
+Host is up (0.0024s latency).
+Not shown: 993 closed ports
+PORT    STATE SERVICE    VERSION
+1/tcp   open  tcpwrapped
+21/tcp  open  tcpwrapped
+22/tcp  open  tcpwrapped
+23/tcp  open  tcpwrapped
+25/tcp  open  tcpwrapped
+80/tcp  open  tcpwrapped
+443/tcp open  tcpwrapped
+MAC Address: 12:12:12:41:B7:AF (Unknown)
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 13.58 seconds
+           Raw packets sent: 1001 (44.028KB) | Rcvd: 1001 (40.056KB)
+
+
+
+=== 10. OS Detection Scan (-O) ===
+Метод: определение операционной системы
+Starting Nmap 7.80 ( https://nmap.org ) at 2025-12-23 11:15 UTC
+Initiating ARP Ping Scan at 11:15
+Scanning 172.16.238.12 [1 port]
+Completed ARP Ping Scan at 11:15, 0.03s elapsed (1 total hosts)
+Initiating SYN Stealth Scan at 11:15
+Scanning 172.16.238.12 [1000 ports]
+Discovered open port 22/tcp on 172.16.238.12
+Discovered open port 80/tcp on 172.16.238.12
+Discovered open port 21/tcp on 172.16.238.12
+Discovered open port 25/tcp on 172.16.238.12
+Discovered open port 23/tcp on 172.16.238.12
+Discovered open port 443/tcp on 172.16.238.12
+Discovered open port 1/tcp on 172.16.238.12
+Completed SYN Stealth Scan at 11:15, 0.10s elapsed (1000 total ports)
+Initiating OS detection (try #1) against 172.16.238.12
+Retrying OS detection (try #2) against 172.16.238.12
+Retrying OS detection (try #3) against 172.16.238.12
+Retrying OS detection (try #4) against 172.16.238.12
+Retrying OS detection (try #5) against 172.16.238.12
+Nmap scan report for 172.16.238.12
+Host is up (0.00033s latency).
+Not shown: 993 closed ports
+PORT    STATE SERVICE
+1/tcp   open  tcpmux
+21/tcp  open  ftp
+22/tcp  open  ssh
+23/tcp  open  telnet
+25/tcp  open  smtp
+80/tcp  open  http
+443/tcp open  https
+MAC Address: 12:12:12:41:B7:AF (Unknown)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.80%E=4%D=12/23%OT=1%CT=3%CU=33548%PV=Y%DS=1%DC=D%G=Y%M=121212%T
+OS:M=694A79DA%P=x86_64-pc-linux-gnu)SEQ(SP=41%GCD=1%ISR=48%TI=Z%CI=Z%II=Z%T
+OS:S=U)OPS(O1=M5B4%O2=M5B4%O3=M5B4%O4=M5B4%O5=M5B4%O6=M5B4)WIN(W1=1020%W2=1
+OS:020%W3=1020%W4=1020%W5=1020%W6=1020)ECN(R=Y%DF=N%T=40%W=1020%O=M5B4%CC=N
+OS:%Q=)T1(R=Y%DF=N%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=Y%DF=N%T=40%W=0%S=A%A=S%
+OS:F=AR%O=%RD=0%Q=)T3(R=Y%DF=N%T=40%W=1020%S=O%A=S+%F=AS%O=M5B4%RD=0%Q=)T4(
+OS:R=Y%DF=N%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=N%T=40%W=0%S=A%A=S+%F
+OS:=AR%O=%RD=0%Q=)T6(R=Y%DF=N%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=N%T
+OS:=40%W=0%S=A%A=S%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=38%UN=0%RIPL=G%RID=
+OS:G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=Z)
+
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=65 (Good luck!)
+IP ID Sequence Generation: All zeros
+
+Read data files from: /usr/bin/../share/nmap
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 9.92 seconds
+           Raw packets sent: 1081 (51.118KB) | Rcvd: 1081 (44.726KB)
+
+╔════════════════════════════════════════════════════════════╗
+║     СКАНИРОВАНИЕ ЗАВЕРШЕНО                                 ║
+╚════════════════════════════════════════════════════════════╝

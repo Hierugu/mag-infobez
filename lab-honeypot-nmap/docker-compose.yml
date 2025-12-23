@@ -11,6 +11,8 @@ services:
   attacker:
     build: ./attacker
     container_name: nmap-attacker
+    cap_add:
+      - NET_ADMIN
     networks:
       honeypot-net:
         ipv4_address: 172.16.238.2

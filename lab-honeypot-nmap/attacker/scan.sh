@@ -1,13 +1,38 @@
 #!/bin/bash
+
+# Конфигурация
 TARGET_IP="172.16.238.10"
 AUTO_MODE=false
 
-# Check for --auto argument
-if [[ "$1" == "--auto" ]]; then
-    AUTO_MODE=true
-fi
+# Парсинг аргументов
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --auto)
+            AUTO_MODE=true
+            shift
+            ;;
+        -h|--help)
+            echo "Использование: $0 [OPTIONS] [TARGET_IP]"
+            echo ""
+            echo "OPTIONS:"
+            echo "  --auto              Автоматический режим (без ожидания Enter)"
+            echo "  -h, --help          Показать эту справку"
+            echo ""
+            echo "ПРИМЕРЫ:"
+            echo "  $0                           # Сканировать 172.16.238.10 в интерактивном режиме"
+            echo "  $0 192.168.1.1              # Сканировать 192.168.1.1 в интерактивном режиме"
+            echo "  $0 --auto 192.168.1.1       # Сканировать 192.168.1.1 в автоматическом режиме"
+            exit 0
+            ;;
+        *)
+            # Предполагаем, что это IP адрес
+            TARGET_IP=$1
+            shift
+            ;;
+    esac
+done
 
-# Функция для ожидания нажатия Enter
+# Функция для ожидания нажатия Enter или автоматической задержки
 wait_for_user() {
     if [[ "$AUTO_MODE" == true ]]; then
         sleep 1
@@ -17,93 +42,71 @@ wait_for_user() {
     fi
 }
 
-echo -e "\n=== TCP Connect Scan (-sT) ==="
+echo -e "\n╔════════════════════════════════════════════════════════════╗"
+echo -e "║     СКАНИРОВАНИЕ HONEYPOT ЦЕЛЕВОГО ХОСТА                   ║"
+echo -e "║     Target: $TARGET_IP                                     ║"
+echo -e "╚════════════════════════════════════════════════════════════╝"
+
+# 1. TCP Connect Scan (-sT)
+echo -e "\n=== 1. TCP Connect Scan (-sT) ==="
+echo "Метод: полное установление TCP-соединения"
 wait_for_user
 nmap -n -sT -v $TARGET_IP
 
-echo -e "\n=== TCP SYN Scan (-sS) ==="
+# 2. TCP SYN Scan (-sS)
+echo -e "\n=== 2. TCP SYN Scan (-sS) ==="
+echo "Метод: полуоткрытое сканирование (посылается только SYN)"
 wait_for_user
 nmap -n -sS -v $TARGET_IP
 
-echo -e "\n=== FIN Scan (-sF) ==="
+# 3. FIN Scan (-sF)
+echo -e "\n=== 3. FIN Scan (-sF) ==="
+echo "Метод: передаются пакеты с флагом FIN"
 wait_for_user
 nmap -n -sF -v $TARGET_IP
 
-echo -e "\n=== Xmas Tree Scan (-sX) ==="
+# 4. Xmas Tree Scan (-sX)
+echo -e "\n=== 4. Xmas Tree Scan (-sX) ==="
+echo "Метод: пакет с флагами FIN, PSH, URG"
 wait_for_user
 nmap -n -sX -v $TARGET_IP
 
-echo -e "\n=== NULL Scan (-sN) ==="
+# 5. NULL Scan (-sN)
+echo -e "\n=== 5. NULL Scan (-sN) ==="
+echo "Метод: пакет без установленных флагов"
 wait_for_user
 nmap -n -sN -v $TARGET_IP
 
-echo -e "\n=== ACK Scan (-sA) ==="
-wait_for_user
-nmap -n -sA -v $TARGET_IP
-
-echo -e "\n=== TCP Window Scan (-sW) ==="
-wait_for_user
-nmap -n -sW -v $TARGET_IP
-
-echo -e "\n=== IP Protocol Scan (-sO) ==="
+# 6. IP Protocol Scan (-sO)
+echo -e "\n=== 6. IP Protocol Scan (-sO) ==="
+echo "Метод: определение поддерживаемых IP-протоколов"
 wait_for_user
 nmap -n -sO -v $TARGET_IP
 
-echo -e "\n=== RPC Scan (-sR) ==="
+# 7. ACK Scan (-sA)
+echo -e "\n=== 7. ACK Scan (-sA) ==="
+echo "Метод: ACK-пакеты для анализа фильтрации"
+wait_for_user
+nmap -n -sA -v $TARGET_IP
+
+# 8. TCP Window Scan (-sW)
+echo -e "\n=== 8. TCP Window Scan (-sW) ==="
+echo "Метод: анализ окна TCP"
+wait_for_user
+nmap -n -sW -v $TARGET_IP
+
+# 9. RPC Scan (-sR)
+echo -e "\n=== 9. RPC Scan (-sR) ==="
+echo "Метод: определение RPC-служб"
 wait_for_user
 nmap -n -sR -v $TARGET_IP
 
-echo -e "\n=== OS Detection Scan (-O) ==="
+# 10. OS Detection (-O)
+echo -e "\n=== 10. OS Detection Scan (-O) ==="
+echo "Метод: определение операционной системы"
 wait_for_user
 nmap -n -O -v $TARGET_IP
 
-echo -e "\n=== Aggressive Scan (-A -T4) ==="
-wait_for_user
-nmap -n -A -T4 -v $TARGET_IP
-
-echo -e "\n=== UDP Scan (-sU --top-ports 20) ==="
-wait_for_user
-nmap -n -sU -v --top-ports 20 $TARGET_IP
-
-echo -e "\n=== Combined Scan (SYN+Services+OS) ==="
-wait_for_user
-nmap -n -sS -sV -O -T4 -p 1-1000 $TARGET_IP
-
-echo -e "\n=== Fragmented Packet Scan (-sS -f) ==="
-wait_for_user
-nmap -n -sS -f -v $TARGET_IP
-
-echo -e "\n=== Spoofed MAC Scan (--spoof-mac 0) ==="
-wait_for_user
-nmap -n -sS -v --spoof-mac 0 $TARGET_IP
-
-# echo -e "\n=== Slow Scan (-sS -T1) ==="
-# wait_for_user
-# nmap -sS -T1 -v $TARGET_IP
-
-echo -e "\n=== All Ports SYN Scan (-p- --max-retries 1 -T4) ==="
-wait_for_user
-nmap -n -sS -p- --max-retries 1 -T4 $TARGET_IP
-
-echo -e "\n=== Honeypot Detection Script Scan ==="
-wait_for_user
-nmap -n -sS --script=http-title,ssh-hostkey,ssl-cert -v $TARGET_IP
-
-echo -e "\n=== Version Detection Scan (-sV) ==="
-wait_for_user
-nmap -n -sV -v $TARGET_IP
-
-# echo -e "\n=== XML Output Scan (-sS -oX) ==="
-# nmap -sS -oX $LOG_DIR/${TIMESTAMP}_nmap_scan.xml $TARGET_IP
-
-
-# echo -e "${BLUE}=== Дополнительные сканирования ===${NC}"
-
-# echo -e "\n=== Windows Specific Ports (-sS -p 135,139,445,3389) ==="
-# nmap -sS -p 135,139,445,3389 -v $TARGET_IP
-
-# echo -e "\n=== Port Range 1-1000 (-sS -p 1-1000) ==="
-# nmap -sS -p 1-1000 -v $TARGET_IP
-
-# echo -e "\n=== Standard Service Detection (-sS -sV --top-ports 50) ==="
-# nmap -sS -sV --top-ports 50 -v $TARGET_IP
+echo -e "\n╔════════════════════════════════════════════════════════════╗"
+echo -e "║     СКАНИРОВАНИЕ ЗАВЕРШЕНО                                 ║"
+echo -e "╚════════════════════════════════════════════════════════════╝\n"
