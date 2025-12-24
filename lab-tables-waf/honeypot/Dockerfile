@@ -1,0 +1,18 @@
+FROM hadang/ubuntu12.04-honeyd
+
+# Обновляем источники на архивные репозитории для Ubuntu Precise
+RUN sed -i 's/archive.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list && \
+    sed -i 's/security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
+
+# Устанавливаем утилиты для маршрутизации и пересылки логов
+RUN apt-get update && \
+    apt-get install -y dos2unix nmap inetutils-ping iproute rsyslog && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN mkdir -p /etc/honeypot
+COPY honeyd.conf /etc/honeypot/honeyd.conf
+COPY start_honeyd.sh /start_honeyd.sh
+RUN dos2unix /etc/honeypot/honeyd.conf /start_honeyd.sh && chmod +x /start_honeyd.sh
+
+WORKDIR /
+ENTRYPOINT ["/bin/bash", "/start_honeyd.sh"]
