@@ -6,7 +6,7 @@ cat > /etc/shorewall/rules <<'EOF'
 Ping(ACCEPT)  net  fw
 Ping(ACCEPT)  dmz  fw
 # Allow only specific services from net to dmz
-ACCEPT   net   dmz   tcp   21,80,8080
+ACCEPT:info   net   dmz   tcp   21,80,8080
 EOF
 
 cat > /etc/shorewall/policy <<'EOF'
