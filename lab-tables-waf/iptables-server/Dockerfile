@@ -10,6 +10,7 @@ RUN apt-get update \
     iptables \
     iptables-persistent \
     iproute2 \
+    dos2unix \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
@@ -18,7 +19,7 @@ RUN mkdir -p /var/www/html && echo "<html><body><h1>IPTables Server</h1></body><
 WORKDIR /root
 
 COPY set-net-rules.sh /usr/local/bin/set-net-rules.sh
-RUN chmod +x /usr/local/bin/set-net-rules.sh
+RUN dos2unix /usr/local/bin/set-net-rules.sh && chmod +x /usr/local/bin/set-net-rules.sh
 
 EXPOSE 80
 

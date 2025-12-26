@@ -19,7 +19,7 @@ RUN mkdir -p /var/www/html && echo "<html><body><h1>WAF Victim</h1></body></html
 
 # Установка пакетов и зависимостей для Части 2 (WAF/OWASP CRS)
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends git curl ca-certificates \
+  && apt-get install -y --no-install-recommends git curl ca-certificates dos2unix \
   && git clone https://github.com/coreruleset/coreruleset.git /tmp/coreruleset \
   && mkdir -p /etc/modsecurity \
   && cp /tmp/coreruleset/crs-setup.conf.example /etc/modsecurity/crs-setup.conf \
@@ -37,7 +37,7 @@ RUN apt-get update \
 WORKDIR /root
 
 COPY set-net-rules.sh /usr/local/bin/set-net-rules.sh
-RUN chmod +x /usr/local/bin/set-net-rules.sh
+RUN dos2unix /usr/local/bin/set-net-rules.sh && chmod +x /usr/local/bin/set-net-rules.sh
 
 EXPOSE 80
 
